@@ -16,7 +16,7 @@ object NotificationHelper {
     const val NOTIFICATION_CHANNEL_ID = "101"
 
     @RequiresApi(Build.VERSION_CODES.O)
-     /*mohamed elgohary*/
+            /*mohamed elgohary*/
     // Create Notification Channel Function
     fun createNotificationChannel(channelId: String, context: Context) {
         val notificationChannel =
@@ -44,7 +44,7 @@ object NotificationHelper {
         }
         val pendingIntent = TaskStackBuilder.create(context).run {
             addNextIntentWithParentStack(notificationIntent)
-            getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT)
+            getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
         }
 
         val notification = context.let {
