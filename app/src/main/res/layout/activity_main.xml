@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <!--mohamed elgohary-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".MainActivity"
+        tools:showIn="@layout/activity_main">
+
+        <ImageView
+            android:id="@+id/cloud_image"
+            android:layout_width="wrap_content"
+            android:layout_height="280dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/download_2" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/loading_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cloud_image"
+            app:layout_constraintVertical_bias="0.369">
+
+            <RadioButton
+                android:id="@+id/glide_radio_button"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:text="@string/glide_image_loading"
+                android:textColor="@color/text_radio"
+                android:textSize="18sp" />
+            <!--mohamed elgohary-->
+            <RadioButton
+                android:id="@+id/load_app_radio_button"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:text="@string/load_app_"
+                android:textColor="@color/text_radio"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/retrofit_radio_button"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/retrofit_type_safe_http_client"
+                android:textColor="@color/text_radio"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+        <com.udacity.LoadingButton
+            android:id="@+id/loading_button"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cloud_image"
+            app:layout_constraintVertical_bias="0.952" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- <include layout="@layout/content_main" />-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

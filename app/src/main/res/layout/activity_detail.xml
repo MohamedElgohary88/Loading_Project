@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_motion_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="18dp"
+    android:layoutAnimation="@anim/layout_animation"
+    app:layoutDescription="@xml/motion_scene">
+
+    <TextView
+        android:id="@+id/file_name_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="@string/file_name"
+        android:textSize="24sp" />
+    <!--mohamed elgohary-->
+    <TextView
+        android:id="@+id/file_name_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="72dp"
+        tools:text="@string/load_app_" />
+
+    <TextView
+        android:id="@+id/status_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="@string/status"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/status_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:textSize="24sp"
+        tools:text="Fail" />
+
+    <Button
+        android:id="@+id/okay_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Ok"
+        android:textColor="#212121"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status_textView"
+        tools:layout_editor_absoluteX="18dp" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

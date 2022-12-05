@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/file_name_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:alpha="1.0"
+            android:gravity="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/file_name_textView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/file_name_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:alpha="1.0"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/file_name_header"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/status_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:alpha="1.0"
+            android:gravity="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/status_textView"
+            app:layout_constraintStart_toStartOf="parent" />
+        <!--mohamed elgohary-->
+        <Constraint
+            android:id="@+id/status_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:alpha="1.0"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/status_header"
+            app:layout_constraintTop_toBottomOf="@id/file_name_textView" />
+              <!--mohamed elgohary-->
+        <Constraint
+            android:id="@+id/okay_button"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:alpha="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status_textView"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/file_name_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:alpha="3.0"
+            android:gravity="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/file_name_textView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/file_name_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:alpha="3.0"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/file_name_header"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--mohamed elgohary-->
+        <Constraint
+            android:id="@+id/status_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:alpha="3.0"
+            android:gravity="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/status_textView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/status_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:alpha="3.0"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/status_header"
+            app:layout_constraintTop_toBottomOf="@id/file_name_textView" />
+        <!--mohamed elgohary-->
+        <Constraint
+            android:id="@+id/okay_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="3.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status_textView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.145"
+            app:layout_constraintHorizontal_bias="0.542" />
+    </ConstraintSet>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="2000"
+        app:motionInterpolator="linear" />
+
+</MotionScene>

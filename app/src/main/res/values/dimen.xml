@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--rectangle-->
+    <dimen name="RectRight">450dp</dimen>
+    <dimen name="RectBottom">90dp</dimen>
+    <dimen name="RectTop">0dp</dimen>
+    <dimen name="RectLeft">0dp</dimen>
+
+     <!--circle-->
+    <dimen name="circleRadius">20dp</dimen>
+    <dimen name="CircBottom">60dp</dimen>
+    <!--mohamed elgohary-->
+    <dimen name="load">0.0</dimen>
+    <dimen name="textSize">32sp</dimen>
+
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Loading-Project</string>
+    <string name="app_description">Download files from Internet</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="notification_title"> Loading App Notification </string>
+    <string name="notification_description">The Project File is downloaded</string>
+    <string name="notification_button">Click Here</string>
+
+    <string name="button_name">Click me</string>
+    <string name="button_loading">We are loading </string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="please_select">Please Select Any Radio Button  </string>
+    <string name="glide_image_loading">Glide- Image Loading Library by Bump Tech</string>
+    <string name="load_app_">Load App - Current Repository By Udacity</string>
+    <string name="retrofit_type_safe_http_client">Retrofit - Type-safe HTTP client for android and java by Square,inc</string>
+    <string name="loading">Loading</string>
+    <string name="download">Download</string>
+    <string name="status">Status :</string>
+    <string name="file_name">File Name :</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--   TODO: create custom attributes for the view-->
+    <!--mohamed elgohary-->
+    <declare-styleable name="MyLoadingButton">
+        <attr name="myBackGroundColor" format="integer" />
+        <attr name="myTextColor" format="integer" />
+    </declare-styleable>
+
+</resources>
