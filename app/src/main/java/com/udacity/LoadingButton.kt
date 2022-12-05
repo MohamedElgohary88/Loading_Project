@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.View
 import kotlin.properties.Delegates
 
@@ -17,6 +18,7 @@ class LoadingButton @JvmOverloads constructor(
     private var heightSize = 0
     private var mArcBounds = RectF(50F, 20F, 100F, 80F)
     private var valueAnimator = ValueAnimator()
+    private var valueAnimatorCircle = ValueAnimator()
     private var buttonText = resources.getString(R.string.download)
     private var endAngle = 0F
     private var starAngle = 0F
@@ -36,7 +38,7 @@ class LoadingButton @JvmOverloads constructor(
         style = Paint.Style.FILL
         color = context.getColor(R.color.colorPrimaryDark)
         textAlign = Paint.Align.CENTER
-    /*mohamed elgohary*/
+        /*mohamed elgohary*/
     }
     private var paintText = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
@@ -48,14 +50,15 @@ class LoadingButton @JvmOverloads constructor(
 
     /// *****  ButtonState  **** //////
     private var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { p, old, new ->
-
-        buttonText = context.getString(R.string.download)
+       // buttonText = context.getString(R.string.download)
         if (new == ButtonState.Loading) {
+            buttonText = resources.getString(R.string.loading)
             val updateListener = ValueAnimator.AnimatorUpdateListener {
-                buttonText = resources.getString(R.string.loading)
-                endAngle = (it.animatedValue as Float)
                 clipRectRight = (it.animatedValue as Float)
                 invalidate()
+            }
+            val updateCircle = ValueAnimator.AnimatorUpdateListener {
+                endAngle = (it.animatedValue as Float)
             }
             /*mohamed elgohary*/
             valueAnimator =
@@ -63,20 +66,29 @@ class LoadingButton @JvmOverloads constructor(
             valueAnimator.addUpdateListener(updateListener)
             valueAnimator.start()
             invalidate()
-        } else if (buttonState == ButtonState.Completed){
-            buttonText = context.getString(R.string.download)
-            valueAnimator.cancel()
+
+            valueAnimatorCircle = AnimatorInflater.loadAnimator(context, R.animator.my_animation_circle) as ValueAnimator
+            valueAnimatorCircle.addUpdateListener(updateCircle)
+            valueAnimatorCircle.start()
             invalidate()
-        }else{
-            buttonText = context.getString(R.string.download)
+
+        } else if (buttonState == ButtonState.Completed) {
+            buttonText = context.getString(R.string.completed)
             valueAnimator.cancel()
+            valueAnimatorCircle.cancel()
+            invalidate()
+        } else {
+            valueAnimator.end()
+            valueAnimatorCircle.end()
+            buttonText = context.getString(R.string.download)
             invalidate()
         }
     }
 
-    init {
+   /* init {
         buttonText = context.getString(R.string.download)
-    }
+    }*/
+
     /// *****  onDraw  **** //////
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
@@ -105,14 +117,12 @@ class LoadingButton @JvmOverloads constructor(
 
     /// *****  Draw Download Button  **** //////
     private fun drawDownloadButton(canvas: Canvas) {
-
         // Rectangle
         canvas.drawRect(clipRectLeft, clipRectTop, clipRectRight, clipRectBottom, paintRectangle)
         // Circle
         canvas.drawArc(mArcBounds, starAngle, endAngle, true, paintCircle)
         // Text
         canvas.drawText(buttonText, 500F, 150F, paintText)
-
 
     }
 }

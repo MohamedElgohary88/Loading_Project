@@ -44,8 +44,10 @@ class MainActivity : AppCompatActivity() {
         loading_button.setOnClickListener {
             radioChoice()
         }
+
         NotificationHelper.createNotificationChannel(NOTIFICATION_CHANNEL_ID, this)
     }
+
     /*mohamed elgohary*/
     //  *****  Receiver  ***** //
     private val receiver = object : BroadcastReceiver() {
@@ -62,6 +64,7 @@ class MainActivity : AppCompatActivity() {
                     context?.let {
                         NotificationHelper
                             .sendNotification(it, fileName, SUCCESS)
+                        loading_button.setState(ButtonState.Completed)
                     }
                 } else {
                     context?.let {
@@ -72,6 +75,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     /*mohamed elgohary*/
     //  *****  checkAndRequestPermissions  ***** //
     private fun checkAndRequestPermissions() {
@@ -102,7 +106,9 @@ class MainActivity : AppCompatActivity() {
         val downloadManager = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
         downloadID =
             downloadManager.enqueue(request)// enqueue puts the download request in the queue.
+
     }
+
     /*mohamed elgohary*/
     //  *****  Radio Choice Function  ***** //
     private fun radioChoice() {
@@ -124,6 +130,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     /*mohamed elgohary*/
     //  *****  Companion Object  ***** //
     companion object {

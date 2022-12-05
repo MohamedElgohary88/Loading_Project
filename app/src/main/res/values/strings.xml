@@ -16,6 +16,7 @@
     <string name="retrofit_type_safe_http_client">Retrofit - Type-safe HTTP client for android and java by Square,inc</string>
     <string name="loading">Loading</string>
     <string name="download">Download</string>
+    <string name="completed">Completed</string>
     <string name="status">Status :</string>
     <string name="file_name">File Name :</string>
 
